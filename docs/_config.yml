@@ -1,0 +1,9 @@
+title: puzzle:bit
+description: >
+  puzzle:bit is a collection of puzzles for the micro:bit. A bit like Japanese
+  puzzle boxes, except digital, and micro.
+baseurl: ""
+url: "http://puzzle-bit.codeguild.co"
+
+markdown: kramdown
+theme: minima
