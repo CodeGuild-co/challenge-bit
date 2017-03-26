@@ -1,0 +1,22 @@
+# Jekyll Config
+safe: true
+markdown: kramdown
+theme: minima
+exclude: [LICENSE, Vagrantfile, README.md, CNAME]
+timezone: Europe/London
+host: 0.0.0.0
+permalink: pretty
+
+# Theme Config
+title: puzzle:bit
+description: >
+  puzzle:bit is a collection of puzzles for the micro:bit. A bit like Japanese
+  puzzle boxes, except digital, and micro.
+baseurl: ""
+url: "http://puzzle-bit.codeguild.co"
+
+# Site Settings:
+github:
+    repository_name: adventure-bit
+    owner_name: CodeGuild-co
+    repository_url: https://github.com/CodeGuild-co/adventure-bit
