@@ -1,7 +1,7 @@
 # Jekyll Config
 safe: true
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-tactile
 exclude: [LICENSE, Vagrantfile, README.md, CNAME]
 timezone: Europe/London
 host: 0.0.0.0
