@@ -4,7 +4,8 @@ title: Activity Log
 date: 2017-03-30 09:53:00 +0100 
 ---
 
-## Day 1 (Tuesday):
+## Our Puzzle Log 30-03-2017
+# Day 1 (Tuesday):
 _Here is a list of MVP level puzzle ideas that we came up with, for the ‘micro bit’:_
 1.	Chess
 2.	Q20
