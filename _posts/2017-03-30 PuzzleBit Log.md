@@ -41,6 +41,7 @@ As we were away from 2:00pm to 6:30pm for a tour in the History of computers bui
 ## Day 3 (Thursday):
 ---
 Morning log-> We worked out the different combinations of outputs we actually have on our micro bits. For example: ‘a’, ‘b’, ‘a+b’, ‘tilt_left+a’, ‘tilt_right+a’ and etc…
+
 We also worked on our Black Jack puzzle. We added a ‘dealer’ so that you can bet virtual money in the puzzle.
 In addition, we increased the speed on our ‘dodge’ puzzle so that it is slightly more challenging.
 We also worked on our team website, to improve it in various ways.
