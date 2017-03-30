@@ -25,3 +25,5 @@ Here is a data table of number of actual steps taken, compared to the number of 
 | 30  | 28  |
 | 50  | 50  |
 | 60  | 58  |
+
+(during the process of taking these results, we found that we were getting exactly half the actual steps, therefore we just edited the code and just rather than adding 1 during each step, we changed it to ‘add 2’ per step, which is equivalent to multiplying the end result by 2)
