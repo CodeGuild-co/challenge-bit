@@ -37,3 +37,10 @@ Today we looked at finishing each of these puzzles and decided what we could do 
 For example: we looked at how to configure the accelerometer in the micro bit to allow us to programme more interactive puzzles for the user (in the ‘dodge’ and ‘high or low’ puzzles)
 We also looked at improving the webpage design for the place were these puzzles would be posted.
 As we were away from 2:00pm to 6:30pm for a tour in the History of computers building, we weren't able to continue working on our puzzles. 
+
+## Day 3 (Thursday):
+---
+Morning log-> We worked out the different combinations of outputs we actually have on our micro bits. For example: ‘a’, ‘b’, ‘a+b’, ‘tilt_left+a’, ‘tilt_right+a’ and etc…
+We also worked on our Black Jack puzzle. We added a ‘dealer’ so that you can bet virtual money in the puzzle.
+In addition, we increased the speed on our ‘dodge’ puzzle so that it is slightly more challenging.
+We also worked on our team website, to improve it in various ways.
