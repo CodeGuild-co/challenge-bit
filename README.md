@@ -1,4 +1,6 @@
-# puzzle:bit
+# challenge:bit
+
+[![Join the chat at https://gitter.im/CodeGuild-co/challenge-bit](https://badges.gitter.im/CodeGuild-co/challenge-bit.svg)](https://gitter.im/CodeGuild-co/challenge-bit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Puzzle boxes for the micro:bit.
 
@@ -6,7 +8,7 @@ Members of the CodeGuild have been hard at work, creating new, complex, and exci
 
 You'll find the contents of the [website](http://puzzle-bit.codeguild.co) as well as the source code for each of the puzzles. There's also a list of possible improvements to be made, so if you'd like to contribute you can get cracking straight away!
 
-## Making your own Puzzle
+## Making your own Challenge
 
 You can use any micro:bit editor you like, all you need to do is be able to output downloadable `.hex` files for the micro:bit.
 
