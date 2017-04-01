@@ -1,0 +1,8 @@
+Blackjack Instructions
+
+1) You and the Dealer, D, both get 2 cards to start with.
+2) To hit (pick another card), press A+B together.
+3) To miss (keep your cards and end your turn), shake the micro:bit.
+4) The dealer will do the same.
+5) Whoever gets closest to 21 wins. 21, Blackjack, is an automatic win.
+
