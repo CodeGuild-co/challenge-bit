@@ -1,0 +1,9 @@
+input.onButtonPressed(Button.AB, function () {
+    if (Waiting == true) {
+        Waiting = false
+    } else {
+        if (Guess_Screen == Pass_Screen) {
+            Locked = false
+        }
+    }
+})

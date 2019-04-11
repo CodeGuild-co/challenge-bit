@@ -1,0 +1,68 @@
+let Unlocked_Screen: Image = null
+let Locked_Screen: Image = null
+let Continue = false
+let Locked = false
+let Correct = false
+let Waiting = false
+let Y = 0
+let X = 0
+function PasswordEntry() {
+    if (led.point(0, 2) && (led.point(2, 0) && led.point(4, 4))) {
+        Locked = false
+        Correct = true
+    } else {
+        Continue = true
+    }
+}
+input.onButtonPressed(Button.B, function () {
+    Y = 0
+    X = X + 2
+    led.plot(X, Y)
+})
+input.onButtonPressed(Button.A, function () {
+    led.plot(X, Y)
+    Y = Y + 1
+})
+input.onButtonPressed(Button.AB, function () {
+    if (Waiting) {
+        Waiting = false
+        basic.clearScreen()
+    } else if (Waiting == false) {
+        PasswordEntry()
+    } else if (Continue == true) {
+        Continue = false
+        X = 0
+        Y = 0
+        basic.clearScreen()
+    }
+})
+X = 0
+Y = 0
+Correct = false
+Waiting = true
+Locked = true
+Continue = false
+Unlocked_Screen = images.createImage(`
+    . . # . .
+    . # . # .
+    . # . . .
+    . # # # .
+    . # # # .
+    `)
+Locked_Screen = images.createImage(`
+    . . # . .
+    . # . # .
+    . # # # .
+    . # # # .
+    . # # # .
+    `)
+basic.forever(function () {
+    if (Waiting) {
+        Locked_Screen.showImage(0)
+    } else if (Correct) {
+        Locked = false
+        Unlocked_Screen.showImage(0)
+    } else if (Continue == true) {
+        Locked_Screen.showImage(0)
+    }
+})
