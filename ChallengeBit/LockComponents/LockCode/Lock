@@ -1,6 +1,7 @@
 let Current_Screen = 0
 let Unlocked_Screen: Image = null
 let Locked_Screen: Image = null
+let Continue = false
 let Locked = false
 let Correct = false
 let Waiting = false
@@ -11,7 +12,7 @@ function PasswordEntry() {
         Locked = false
         Correct = true
     } else {
-        Correct = false
+        Continue = true
     }
 }
 input.onButtonPressed(Button.B, function () {
@@ -29,6 +30,10 @@ input.onButtonPressed(Button.AB, function () {
         basic.clearScreen()
     } else if (Waiting == false) {
         PasswordEntry()
+    } else if (Continue == true) {
+        Continue = false
+        basic.clearScreen()
+        Waiting = true
     }
 })
 X = 0
@@ -36,6 +41,7 @@ Y = 0
 Correct = false
 Waiting = true
 Locked = true
+Continue = false
 Unlocked_Screen = images.createImage(`
     . . # . .
     . # . # .
@@ -57,7 +63,7 @@ basic.forever(function () {
     } else if (Correct) {
         Locked = false
         Unlocked_Screen.showImage(0)
-    } else if (Locked == false) {
-        basic.clearScreen()
+    } else if (Continue == true) {
+        Locked_Screen.showImage(0)
     }
 })
