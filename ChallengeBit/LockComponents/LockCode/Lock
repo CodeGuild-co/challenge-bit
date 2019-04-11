@@ -1,6 +1,3 @@
-let Locked = 0
-let x = 0
-let y = 0
 input.onButtonPressed(Button.A, function () {
     led.plot(x, y)
     y = y + 1
