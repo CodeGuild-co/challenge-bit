@@ -1,5 +1,6 @@
 let Locked = 0
-let Guess_Screen = 0
+let x = 0
+let y = 0
 let Lock_screen = (`
                 . . # . .
                 . # . # .
@@ -21,7 +22,13 @@ let Blank_Screen = (`
                 . . . . .
                 . . . . .
                 `)
-Guess_Screen = Blank_Screen
+let Guess_Screen = (`
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                `)
 let Pass_Screen = (`
                 # . # . #
                 # . . . #
@@ -42,9 +49,11 @@ if (input.buttonIsPressed(Button.AB)) {
 }
 while (Locked == 1) {
     if (input.buttonIsPressed(Button.A)) {
-        led.plot(0, 0)
+        led.plot(x, y)
+        x = x + 1
     } else if (input.buttonIsPressed(Button.B)) {
-        led.plot(0, 0)
+        led.plot(x, y)
+        y = y + 2
     } else if (input.buttonIsPressed(Button.AB)) {
         if (Guess_Screen == Pass_Screen) {
             basic.showLeds(`
