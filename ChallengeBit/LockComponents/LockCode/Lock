@@ -1,0 +1,41 @@
+let Locked = 0
+basic.showLeds(`
+    . . # . .
+    . # . # .
+    . # # # .
+    . # # # .
+    . # # # .
+    `)
+Locked = 1
+if (input.buttonIsPressed(Button.AB)) {
+    basic.clearScreen()
+}
+while (Locked == 1) {
+    if (input.buttonIsPressed(Button.A)) {
+        led.plot(0, 0)
+    } else if (input.buttonIsPressed(Button.B)) {
+        led.plot(0, 0)
+    } else if (input.buttonIsPressed(Button.AB)) {
+        if (true) {
+            basic.showLeds(`
+                . . # . .
+                . # . # .
+                . # . . .
+                . # # # .
+                . # # # .
+                `)
+            Locked = 0
+        } else {
+            basic.showLeds(`
+                . . # . .
+                . # . # .
+                . # # # .
+                . # # # .
+                . # # # .
+                `)
+            basic.clearScreen()
+        }
+    } else {
+    	
+    }
+}
