@@ -1,4 +1,3 @@
-let Current_Screen = 0
 let Unlocked_Screen: Image = null
 let Locked_Screen: Image = null
 let Continue = false
@@ -32,8 +31,9 @@ input.onButtonPressed(Button.AB, function () {
         PasswordEntry()
     } else if (Continue == true) {
         Continue = false
+        X = 0
+        Y = 0
         basic.clearScreen()
-        Waiting = true
     }
 })
 X = 0
@@ -56,7 +56,6 @@ Locked_Screen = images.createImage(`
     . # # # .
     . # # # .
     `)
-Current_Screen = 0
 basic.forever(function () {
     if (Waiting) {
         Locked_Screen.showImage(0)
