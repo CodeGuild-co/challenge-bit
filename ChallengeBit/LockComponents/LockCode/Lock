@@ -1,166 +1,63 @@
-input.onButtonPressed(Button.A, function () {
-    led.plot(x, y)
-    y = y + 1
-})
+let Current_Screen = 0
+let Unlocked_Screen: Image = null
+let Locked_Screen: Image = null
+let Locked = false
+let Correct = false
+let Waiting = false
+let Y = 0
+let X = 0
+function PasswordEntry() {
+    if (led.point(0, 2) && (led.point(2, 0) && led.point(4, 4))) {
+        Locked = false
+        Correct = true
+    } else {
+        Correct = false
+    }
+}
 input.onButtonPressed(Button.B, function () {
-    y = 0
-    x = x + 2
-    led.plot(x, y)
+    Y = 0
+    X = X + 2
+    led.plot(X, Y)
+})
+input.onButtonPressed(Button.A, function () {
+    led.plot(X, Y)
+    Y = Y + 1
 })
 input.onButtonPressed(Button.AB, function () {
-    if (Guess_Screen == Pass_Screen) {
-        basic.showLeds(`
-            . . # . .
-            . # . # .
-            . # . . .
-            . # # # .
-            . # # # .
-            `)
-        Locked = 0
-    } else {
-        basic.showLeds(`
-            . . # . .
-            . # . # .
-            . # # # .
-            . # # # .
-            . # # # .
-            `)
+    if (Waiting) {
+        Waiting = false
         basic.clearScreen()
+    } else if (Waiting == false) {
+        PasswordEntry()
     }
 })
-let Lock_screen = (`
-
-        
-        
-                . . # . .
-
-        
-        
-                . # . # .
-
-        
-        
-                . # # # .
-
-        
-        
-                . # # # .
-
-        
-        
-                . # # # .
-
-        
-        
-                `)
-let UnLock_screen = (`
-
-            
-            
-                . . # . .
-
-            
-            
-                . # . # .
-
-            
-            
-                . # . . .
-
-            
-            
-                . # # # .
-
-            
-            
-                . # # # .
-
-            
-            
-                `)
-let Blank_Screen = (`
-
-                
-                
-                . . . . .
-
-                
-                
-                . . . . .
-
-                
-                
-                . . . . .
-
-                
-                
-                . . . . .
-
-                
-                
-                . . . . .
-
-                
-                
-                `)
-let Guess_Screen = (`
-
-                    
-                    
-                . . . . .
-
-                    
-                    
-                . . . . .
-
-                    
-                    
-                . . . . .
-
-                    
-                    
-                . . . . .
-
-                    
-                    
-                . . . . .
-
-                    
-                    
-                `)
-let Pass_Screen = (`
-
-                        
-                        
-                # . # . #
-
-                        
-                        
-                # . . . #
-
-                        
-                        
-                # . . . #
-
-                        
-                        
-                . . . . #
-
-                        
-                        
-                . . . . #
-
-                        
-                        
-                `)
-basic.showLeds(`
+X = 0
+Y = 0
+Correct = false
+Waiting = true
+Locked = true
+Unlocked_Screen = images.createImage(`
+    . . # . .
+    . # . # .
+    . # . . .
+    . # # # .
+    . # # # .
+    `)
+Locked_Screen = images.createImage(`
     . . # . .
     . # . # .
     . # # # .
     . # # # .
     . # # # .
     `)
-Locked = 1
-if (input.buttonIsPressed(Button.AB)) {
-    basic.clearScreen()
-}
+Current_Screen = 0
+basic.forever(function () {
+    if (Waiting) {
+        Locked_Screen.showImage(0)
+    } else if (Correct) {
+        Locked = false
+        Unlocked_Screen.showImage(0)
+    } else if (Locked == false) {
+        basic.clearScreen()
+    }
+})
