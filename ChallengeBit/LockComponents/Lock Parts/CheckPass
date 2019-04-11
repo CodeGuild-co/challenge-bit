@@ -1,0 +1,7 @@
+function PasswordEntry() {
+    if (led.point(0, 2) && (led.point(2, 0) && led.point(4, 4))) {
+        Correct = true
+    } else {
+        Correct = false
+    }
+}

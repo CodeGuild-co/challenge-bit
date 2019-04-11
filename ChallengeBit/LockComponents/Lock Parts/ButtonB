@@ -1,0 +1,4 @@
+input.onButtonPressed(Button.B, function () {
+    Y = 0
+    X = X + 2
+    led.plot(X, Y)

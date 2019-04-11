@@ -1,0 +1,27 @@
+basic.forever(function () {
+    if (Waiting == false) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
+    } else if (Locked == false) {
+        basic.showLeds(`
+            . . # . .
+            . # . # .
+            . # . . .
+            . # # # .
+            . # # # .
+            `)
+    } else {
+        basic.showLeds(`
+            . . # . .
+            . # . # .
+            . # # # .
+            . # # # .
+            . # # # .
+            `)
+    }
+})
