@@ -1,0 +1,86 @@
+let Unlocked_Screen: Image = null
+let Locked_Screen: Image = null
+let allowedToOpen = false
+let Correct = false
+let Waiting = false
+let Locked = false
+let Continue = false
+let X = 0
+let Y = 0
+function PasswordEntry() {
+    if (led.point(0, 3) && led.point(2, 1)) {
+        Continue = true
+    } else if (led.point(0, 2) && (led.point(2, 0) && led.point(4, 4))) {
+        Locked = false
+        Correct = true
+    } else {
+        Continue = true
+    }
+}
+input.onButtonPressed(Button.B, function () {
+    Y = 0
+    X = X + 2
+    led.plot(X, Y)
+})
+input.onButtonPressed(Button.AB, function () {
+    if (Continue) {
+        Continue = false
+        X = 0
+        Y = 0
+        basic.clearScreen()
+        basic.pause(500)
+    } else if (Waiting) {
+        Waiting = false
+        basic.clearScreen()
+    } else if (Waiting == false) {
+        PasswordEntry()
+    }
+})
+input.onPinReleased(TouchPin.P0, function () {
+    if (allowedToOpen == false) {
+        basic.showString("FAILED")
+        basic.showLeds(`
+            # . . . #
+            . # . # .
+            . . # . .
+            . # . # .
+            # . . . #
+            `)
+        control.waitMicros(5000)
+    }
+})
+input.onButtonPressed(Button.A, function () {
+    led.plot(X, Y)
+    Y = Y + 1
+})
+X = 0
+Y = 0
+Correct = false
+Waiting = true
+Locked = true
+Continue = false
+Unlocked_Screen = images.createImage(`
+    . . # . .
+    . # . # .
+    . # . . .
+    . # # # .
+    . # # # .
+    `)
+Locked_Screen = images.createImage(`
+    . . # . .
+    . # . # .
+    . # # # .
+    . # # # .
+    . # # # .
+    `)
+allowedToOpen = false
+basic.forever(function () {
+    if (Waiting) {
+        Locked_Screen.showImage(0)
+    } else if (Correct) {
+        Unlocked_Screen.showImage(0)
+        allowedToOpen = true
+    } else if (Continue) {
+        Locked_Screen.showImage(0)
+    }
+})
